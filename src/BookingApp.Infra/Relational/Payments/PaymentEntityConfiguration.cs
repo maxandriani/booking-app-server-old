@@ -15,6 +15,10 @@ public class PaymentEntityConfiguration : IEntityTypeConfiguration<Payment>
     builder.Property(p => p.BookingId)
       .HasComment("Se essa transação está vinculada a uma locação.");
 
+    builder.Property(p => p.Description)
+      .HasMaxLength(PaymentConstraints.DescriptionMaxLength)
+      .HasComment("O que aconteceu...");
+
     builder.HasOne(p => p.Place)
       .WithMany()
       .HasForeignKey(p => p.PlaceId)

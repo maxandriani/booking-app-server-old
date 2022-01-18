@@ -1,11 +1,15 @@
 using BookingApp.Relational;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using BookingApp.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add low level configurations
 builder.Services.AddDbContext<BookingAppDbContext>(options
   => options.UseNpgsql(builder.Configuration.GetConnectionString(BookingAppDbContext.ConnectionName)));
+
+builder.Services.AddAutoMapper(typeof(BookingMapperProfile));
 
 // Add services to the container.
 

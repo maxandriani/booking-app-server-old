@@ -3,51 +3,47 @@ using BookingApp.Places;
 
 namespace BookingApp.Payments;
 
-/// <summary>
-/// Any invoide record
-/// </summary>
-public class Payment
+public class PaymentDto
 {
   public int Id { get; set; }
   /// <summary>
-  /// What place is this money for/come
+  /// <inheritdoc cref="Payment.PlaceId" />
   /// </summary>
   public int PlaceId { get; set; }
   /// <summary>
   /// <inheritdoc cref="Payment.PlaceId" />
   /// </summary>
-  public Place? Place { get; set; }
+  public PlaceDto? Place { get; set; }
   /// <summary>
-  /// What account this money deposits/withdraw
+  /// <inheritdoc cref="Payment.AccountId" />
   /// </summary>
   public int AccountId { get; set; }
   /// <summary>
-  /// <inheritdoc cref="Payment.Account" />
+  /// <inheritdoc cref="Payment.AccountId" />
   /// </summary>
-  public Account? Account { get; set; }
+  public AccountDto? Account { get; set; }
   /// <summary>
-  /// Is there a related booking?
+  /// <inheritdoc cref="Payment.BookingId" />
   /// </summary>
   public int? BookingId { get; set; }
   /// <summary>
-  /// <inheritdoc cref="Payment.Booking" />
+  /// <inheritdoc cref="Payment.BookingId" />
   /// </summary>
-  public Booking? Booking { get; set; }
+  public BookingDto? Booking { get; set; }
   /// <summary>
-  /// When this balance occurs
+  /// <inheritdoc cref="Payment.BookingId" />
   /// </summary>
   public DateOnly When { get; set; }
   /// <summary>
-  /// Is this balance confirmed? 
+  /// <inheritdoc cref="Payment.ConfirmedAt" />
   /// </summary>
   public DateOnly? ConfirmedAt { get; set; }
   /// <summary>
-  /// How mucht is this record?
+  /// <inheritdoc cref="Payment.Amount" />
   /// </summary>
   public double Amount { get; set; }
   /// <summary>
-  /// 255 Characters to describe the meaning of this record.
+  /// <inheritdoc cref="Payment.Description" />
   /// </summary>
-  /// <value></value>
   public string Description { get; set; } = string.Empty;
 }

@@ -3,6 +3,7 @@ using System;
 using BookingApp.Relational;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookingApp.Infra.Migrations
 {
     [DbContext(typeof(BookingAppDbContext))]
-    partial class BookingAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220118225509_Adicionada_Descricao_Ao_Pagamentos")]
+    partial class Adicionada_Descricao_Ao_Pagamentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
