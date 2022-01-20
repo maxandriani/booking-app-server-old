@@ -15,11 +15,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookingApp.Infra\BookingApp.Infra.csproj" />
+    <ProjectReference Include="..\BookingApp.Domain\BookingApp.Domain.csproj" />
     <ProjectReference Include="..\BookingApp.Services\BookingApp.Services.csproj" />
   </ItemGroup>
 

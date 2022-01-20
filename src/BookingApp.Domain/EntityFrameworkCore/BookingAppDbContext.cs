@@ -3,9 +3,9 @@ using BookingApp.Payments;
 using BookingApp.Places;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookingApp.Relational;
+namespace BookingApp.EntityFrameworkCore;
 
-public class BookingAppDbContext : DbContext
+public class BookingAppDbContext : DbContext, IBookingAppDbContext
 {
   public static string ConnectionName = "BookingAppRelational";
 
@@ -13,11 +13,11 @@ public class BookingAppDbContext : DbContext
   {
   }
 
-  public DbSet<Booking>? Bookings { get; set; }
-  public DbSet<ContactInfo>? ContactInfos { get; set; }
-  public DbSet<Account>? Accounts { get; set; }
-  public DbSet<Payment>? Payments { get; set; }
-  public DbSet<Place>? Places { get; set; }
+  public DbSet<Booking> Bookings => Set<Booking>();
+  public DbSet<ContactInfo> ContactInfos => Set<ContactInfo>();
+  public DbSet<Account> Accounts => Set<Account>();
+  public DbSet<Payment> Payments => Set<Payment>();
+  public DbSet<Place> Places => Set<Place>();
 
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)

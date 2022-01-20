@@ -1,17 +1,19 @@
-using BookingApp.Relational;
+using BookingApp.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using BookingApp.Mappers;
+using BookingApp.Places;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add low level configurations
-builder.Services.AddDbContext<BookingAppDbContext>(options
+builder.Services.AddDbContext<IBookingAppDbContext, BookingAppDbContext>(options
   => options.UseNpgsql(builder.Configuration.GetConnectionString(BookingAppDbContext.ConnectionName)));
 
 builder.Services.AddAutoMapper(typeof(BookingMapperProfile));
 
 // Add services to the container.
+builder.Services.AddScoped<IPlaceService, PlaceService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

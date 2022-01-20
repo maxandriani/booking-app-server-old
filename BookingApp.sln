@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApp.Domain", "src\Bo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApp.Server", "src\BookingApp.Server\BookingApp.Server.csproj", "{03692C4F-50C3-4524-A6E7-DFB2967C5E2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApp.Infra", "src\BookingApp.Infra\BookingApp.Infra.csproj", "{A9CE33E8-8557-4E42-94AE-A79402EE8EDB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApp.Services", "src\BookingApp.Services\BookingApp.Services.csproj", "{45ED9F4D-A425-43E4-ADBD-B2EA16A396EA}"
 EndProject
 Global
