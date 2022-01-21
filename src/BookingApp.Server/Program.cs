@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using BookingApp.Mappers;
 using BookingApp.Places;
+using BookingApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

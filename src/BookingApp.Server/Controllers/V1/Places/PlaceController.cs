@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using BookingApp.Places;
 using System.Text.Json;
-using BookingApp.Common.Results;
-using BookingApp.Common;
+using BookingApp.Services.Results;
+using BookingApp.Services.Requests;
 
 namespace BookingApp.Places.V1;
 
@@ -29,7 +29,7 @@ public class PlaceController : ControllerBase
   [HttpGet("id:int")]
   public async Task<ActionResult<PlaceDto>> GetById([FromQuery] int id)
   {
-    var place = await PlaceService.GetByIdAsync(new GetById { Id = id });
+    var place = await PlaceService.GetByIdAsync(new GetByIdRequest { Id = id });
     return Ok(place);
   }
 
@@ -43,14 +43,14 @@ public class PlaceController : ControllerBase
   [HttpPut("id:int")]
   public async Task<ActionResult<PlaceDto>> Update(int id, [FromBody] CreateUpdatePlaceDto body)
   {
-    var place = await PlaceService.UpdateAsync(new GetById { Id = id }, body);
+    var place = await PlaceService.UpdateAsync(new GetByIdRequest { Id = id }, body);
     return Ok(place);
   }
 
   [HttpDelete("id:int")]
   public async Task<ActionResult> Delete(int id)
   {
-    await PlaceService.DeleteAsync(new GetById { Id = id });
+    await PlaceService.DeleteAsync(new GetByIdRequest { Id = id });
     return Ok();
   }
 }

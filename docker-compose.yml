@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  booking_api:
+    image: booking-api
+    build:
+      context: .
+      dockerfile: src/BookingApp.Server/Dockerfile
+    ports:
+      - 5000:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__BookingAppRelational=${ConnectionStrings__BookingAppRelational}
+    networks:
+      - app_net
+      - data_net
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "admin"
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # - ./sql/create_database.sql:/docker-entrypoint-initdb.d/create_database.sql
+    networks:
+      - data_net
+
+networks:
+  app_net:
+    driver: bridge
+  data_net:
+    driver: bridge
+
+volumes:
+  pgdata:
+  
