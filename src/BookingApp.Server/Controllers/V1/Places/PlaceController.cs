@@ -26,8 +26,8 @@ public class PlaceController : ControllerBase
     return Ok(result);
   }
 
-  [HttpGet("id:int")]
-  public async Task<ActionResult<PlaceDto>> GetById([FromQuery] int id)
+  [HttpGet("{id:int}")]
+  public async Task<ActionResult<PlaceDto>> GetById(int id)
   {
     var place = await PlaceService.GetByIdAsync(new GetByIdRequest { Id = id });
     return Ok(place);
@@ -40,14 +40,14 @@ public class PlaceController : ControllerBase
     return CreatedAtAction(nameof(GetById), new { Id = place.Id }, place);
   }
 
-  [HttpPut("id:int")]
+  [HttpPut("{id:int}")]
   public async Task<ActionResult<PlaceDto>> Update(int id, [FromBody] CreateUpdatePlaceDto body)
   {
     var place = await PlaceService.UpdateAsync(new GetByIdRequest { Id = id }, body);
     return Ok(place);
   }
 
-  [HttpDelete("id:int")]
+  [HttpDelete("{id:int}")]
   public async Task<ActionResult> Delete(int id)
   {
     await PlaceService.DeleteAsync(new GetByIdRequest { Id = id });

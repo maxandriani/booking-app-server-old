@@ -2,7 +2,7 @@ using BookingApp.Services.Requests;
 
 namespace BookingApp.Payments;
 
-public class SearchAccountDto : PagedAndSortedRequest, ISearchableRequest
+public class SearchAccountRequest : PagedAndSortedRequest, ISearchableRequest
 {
   /// <summary>
   /// Pesquisa carteira pelo nome.

@@ -2,7 +2,7 @@ using BookingApp.Services.Requests;
 
 namespace BookingApp.Payments;
 
-public class SearchPaymentDto : PagedAndSortedRequest, ISearchableRequest
+public class SearchPaymentRequest : PagedAndSortedRequest, ISearchableRequest
 {
   /// <summary>
   /// Pesquisa pagamentos com base na descrição, nome do imóvel ou nome da reserva.

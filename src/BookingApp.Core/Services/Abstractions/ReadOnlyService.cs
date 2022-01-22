@@ -34,13 +34,14 @@ public abstract class ReadOnlyService<TEntity, TEntityDto, TKey, TSearchRequest>
   {
     IQueryable<TEntity> query = CreateCollectionQuery(DbSet, input);
 
+    var totalCount = await query.CountAsync();
+
     if (input is IPagedRequest pagedInput)
       query = ApplyPagination(query, pagedInput);
 
     if (input is ISortedRequest sortedInput)
       query = ApplySorting(query, sortedInput);
 
-    var totalCount = await query.CountAsync();
     var result = query.AsEnumerable<TEntity>().Select(p => MapToOutput(p));
 
     Logger.LogTrace($"Consulta de Places realizada com os seguintes argumentos: {JsonSerializer.Serialize(input)}");
@@ -61,6 +62,6 @@ public abstract class ReadOnlyService<TEntity, TEntityDto, TKey, TSearchRequest>
     var take = input?.Take ?? 0;
     var skip = (input?.Page ?? 0) * take;
 
-    return query.Take(take).Skip(skip);
+    return query.Skip(skip).Take(take);
   }
 }
