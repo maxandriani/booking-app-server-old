@@ -7,9 +7,6 @@ using Microsoft.Extensions.Logging;
 
 namespace BookingApp.Payments;
 
-public interface IAccountService : ICrudService<AccountDto, GetByIdRequest, SearchAccountRequest, CreateUpdateAccountDto>
-{}
-
 public class AccountService :
   CrudService<Account, AccountDto, GetByIdRequest, SearchAccountRequest, CreateUpdateAccountDto>,
   IAccountService
@@ -28,5 +25,5 @@ public class AccountService :
 
   protected override IQueryable<Account> DefaultSorting(IQueryable<Account> query) => query.OrderBy(p => p.Name);
 
-  protected override Account GetEntityById(GetByIdRequest keys) => DbSet.Where(p => p.Id == keys.Id).First();
+  protected override Account GetEntityById(GetByIdRequest keys) => DbSet.First(p => p.Id == keys.Id);
 }
