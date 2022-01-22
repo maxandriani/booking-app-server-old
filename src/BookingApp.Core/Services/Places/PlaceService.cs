@@ -29,5 +29,5 @@ public class PlaceService :
 
   protected override IQueryable<Place> DefaultSorting(IQueryable<Place> query) => query.OrderBy(p => p.Name);
 
-  protected override Place GetEntityById(GetByIdRequest keys) => DbSet.Where(p => p.Id == keys.Id).First();
+  protected override Place GetEntityById(GetByIdRequest keys) => DbSet.First(p => p.Id == keys.Id);
 }

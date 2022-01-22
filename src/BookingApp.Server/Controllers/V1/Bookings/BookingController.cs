@@ -15,28 +15,28 @@ public class BookingController : ControllerBase
   }
 
   [HttpGet("{id:int}")]
-  public async Task<ActionResult<BookingDto>> GetByIdAsync(int id)
+  public async Task<ActionResult<BookingDto>> GetById(int id)
   {
     var result = new BookingDto();
     return Ok(result);
   }
 
   [HttpPost]
-  public async Task<ActionResult<BookingDto>> CreateAsync([FromBody] CreateBookingDto body)
+  public async Task<ActionResult<BookingDto>> Create([FromBody] CreateBookingDto body)
   {
     var result = new BookingDto();
-    return CreatedAtAction(nameof(GetByIdAsync), new { Id = result.Id },result);
+    return CreatedAtAction(nameof(GetById), new { Id = result.Id },result);
   }
 
   [HttpPut("{id:int}")]
-  public async Task<ActionResult<BookingDto>> UpdateAsync(int id, [FromBody] UpdateBookingDto body)
+  public async Task<ActionResult<BookingDto>> Update(int id, [FromBody] UpdateBookingDto body)
   {
     var result = new BookingDto();
     return Ok(result);
   }
 
   [HttpDelete("{id:int}")]
-  public async Task<ActionResult> DeleteAsync(int id)
+  public async Task<ActionResult> Delete(int id)
   {
     return Ok();
   }

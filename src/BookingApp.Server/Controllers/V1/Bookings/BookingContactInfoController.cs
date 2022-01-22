@@ -15,28 +15,28 @@ public class BookingContactInfoController : ControllerBase
   }
 
   [HttpGet("{id:int}")]
-  public async Task<ActionResult<ContactInfoDto>> GetByIdAsync(int bookingId, int id)
+  public async Task<ActionResult<ContactInfoDto>> GetById(int bookingId, int id)
   {
     var result = new ContactInfoDto();
     return Ok(result);
   }
 
   [HttpPost]
-  public async Task<ActionResult<ContactInfoDto>> CreateAsync(int bookingId, [FromBody] CreateUpdateContactInfoDto body)
+  public async Task<ActionResult<ContactInfoDto>> Create(int bookingId, [FromBody] CreateUpdateContactInfoDto body)
   {
     var result = new ContactInfoDto();
-    return CreatedAtAction(nameof(GetByIdAsync), new { BookingId = bookingId, Id = result.Id }, result);
+    return CreatedAtAction(nameof(GetById), new { BookingId = bookingId, Id = result.Id }, result);
   }
 
   [HttpPut("{id:int}")]
-  public async Task<ActionResult<ContactInfoDto>> UpdateAsync(int bookingId, int id, [FromBody] CreateUpdateContactInfoDto body)
+  public async Task<ActionResult<ContactInfoDto>> Update(int bookingId, int id, [FromBody] CreateUpdateContactInfoDto body)
   {
     var result = new ContactInfoDto();
     return Ok(result);
   }
 
   [HttpDelete("{id:int}")]
-  public async Task<ActionResult> DeleteAsync(int bookingId, int id)
+  public async Task<ActionResult> Delete(int bookingId, int id)
   {
     return Ok();
   }
