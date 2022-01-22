@@ -33,11 +33,11 @@ public class PaymentDto
   /// <summary>
   /// <inheritdoc cref="Payment.BookingId" />
   /// </summary>
-  public DateOnly When { get; set; }
+  public DateTime When { get; set; }
   /// <summary>
   /// <inheritdoc cref="Payment.ConfirmedAt" />
   /// </summary>
-  public DateOnly? ConfirmedAt { get; set; }
+  public DateTime? ConfirmedAt { get; set; }
   /// <summary>
   /// <inheritdoc cref="Payment.Amount" />
   /// </summary>

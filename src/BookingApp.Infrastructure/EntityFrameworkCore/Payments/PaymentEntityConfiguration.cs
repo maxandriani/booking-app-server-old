@@ -19,6 +19,13 @@ public class PaymentEntityConfiguration : IEntityTypeConfiguration<Payment>
       .HasMaxLength(PaymentConstraints.DescriptionMaxLength)
       .HasComment("O que aconteceu...");
 
+    // Correção das malditas datas...
+    builder.Property(p => p.When)
+      .HasColumnType("timestamp without time zone");
+
+    builder.Property(p => p.ConfirmedAt)
+      .HasColumnType("timestamp without time zone");
+
     builder.HasOne(p => p.Place)
       .WithMany()
       .HasForeignKey(p => p.PlaceId)

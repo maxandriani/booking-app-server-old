@@ -1,4 +1,4 @@
-namespace BookingApp.Bookings;
+namespace BookingApp.Payments;
 
 public class CreateUpdatePaymentDto
 {
@@ -18,13 +18,14 @@ public class CreateUpdatePaymentDto
   /// <summary>
   /// <inheritdoc cref="Payment.When" />
   /// </summary>
-  public DateOnly When { get; set; }
-  /// <summary>
-  /// <inheritdoc cref="Payment.ConfirmedAt" />
-  /// </summary>
-  public DateOnly? ConfirmedAt { get; set; }
+  public DateTime When { get; set; }
   /// <summary>
   /// <inheritdoc cref="Payment.Amount" />
   /// </summary>
   public double Amount { get; set; }
+  /// <summary>
+  /// <inheritdoc cref="Payment.Description" />
+  /// </summary>
+  /// <value></value>
+  public string Description { get; set; } = string.Empty;
 }

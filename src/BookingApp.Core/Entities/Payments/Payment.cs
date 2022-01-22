@@ -36,11 +36,11 @@ public class Payment
   /// <summary>
   /// When this balance occurs
   /// </summary>
-  public DateOnly When { get; set; }
+  public DateTime When { get; set; }
   /// <summary>
   /// Is this balance confirmed? 
   /// </summary>
-  public DateOnly? ConfirmedAt { get; set; }
+  public DateTime? ConfirmedAt { get; set; }
   /// <summary>
   /// How mucht is this record?
   /// </summary>

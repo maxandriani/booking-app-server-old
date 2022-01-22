@@ -1,6 +1,5 @@
 using BookingApp.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 using BookingApp.Mappers;
 using BookingApp.Places;
 using BookingApp.Data;
@@ -17,6 +16,7 @@ builder.Services.AddAutoMapper(typeof(BookingMapperProfile));
 // Add services to the container.
 builder.Services.AddScoped<IPlaceService, PlaceService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,3 +1,5 @@
+using BookingApp.Payments;
+
 namespace BookingApp.Bookings;
 
 public class CreateBookingDto

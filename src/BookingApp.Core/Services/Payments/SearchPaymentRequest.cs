@@ -34,10 +34,10 @@ public class SearchPaymentRequest : PagedAndSortedRequest, ISearchableRequest
   /// Date range to search
   /// </summary>
   /// <value></value>
-  public DateOnly? DateStart { get; set; }
+  public DateTime? DateStart { get; set; }
   /// <summary>
   /// Date range to search
   /// </summary>
   /// <value></value>
-  public DateOnly? DateFinish { get; set; }
+  public DateTime? DateFinish { get; set; }
 }
