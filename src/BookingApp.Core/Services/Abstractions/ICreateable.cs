@@ -1,3 +1,5 @@
+using AutoMapper;
+
 namespace BookingApp.Services.Abstractions;
 
 public interface ICreateable<TCreate, TOutput>

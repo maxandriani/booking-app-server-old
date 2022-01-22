@@ -2,16 +2,12 @@ namespace BookingApp.Services.Results;
 
 public class CollectionResult<TType>
 {
-  public CollectionResult()
-  {
-  }
-
-  public CollectionResult(List<TType> data, int totalCount) : this()
+  public CollectionResult(IEnumerable<TType> data, int totalCount)
   {
     Result = data;
     TotalCount = totalCount;
   }
 
-  public List<TType> Result { get; set; } = new List<TType>();
+  public IEnumerable<TType> Result { get; set; }
   public int TotalCount { get; set; }
 }

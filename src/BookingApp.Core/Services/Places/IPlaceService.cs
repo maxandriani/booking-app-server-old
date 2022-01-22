@@ -1,13 +1,10 @@
 using BookingApp.Services.Results;
 using BookingApp.Services.Requests;
+using BookingApp.Services.Abstractions;
 
 namespace BookingApp.Places;
 
-public interface IPlaceService
+public interface IPlaceService : ICrudService<PlaceDto, GetByIdRequest, SearchPlaceRequest, CreateUpdatePlaceDto>
 {
-  Task<PlaceDto> CreateAsync(CreateUpdatePlaceDto input);
-  Task DeleteAsync(GetByIdRequest input);
-  Task<PlaceDto> GetByIdAsync(GetByIdRequest keys);
-  Task<CollectionResult<PlaceDto>> GetCollectionAsync(SearchPlaceRequest input);
-  Task<PlaceDto> UpdateAsync(GetByIdRequest keys, CreateUpdatePlaceDto input);
+
 }
