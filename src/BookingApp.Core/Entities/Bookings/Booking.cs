@@ -20,11 +20,11 @@ public class Booking
   /// <summary>
   /// When this reservaion starts
   /// </summary>
-  public DateOnly Start { get; set; }
+  public DateTime Start { get; set; }
   /// <summary>
   /// When this reservation finishes
   /// </summary>
-  public DateOnly Finish { get; set; }
+  public DateTime Finish { get; set; }
   /// <summary>
   /// Channel reservation Code
   /// </summary>

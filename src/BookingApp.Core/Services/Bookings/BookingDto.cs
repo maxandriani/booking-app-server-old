@@ -16,11 +16,11 @@ public class BookingDto
   /// <summary>
   /// <inheritdoc cref="Booking.PlaceId">
   /// </summary>
-  public DateOnly Start { get; set; }
+  public DateTime Start { get; set; }
   /// <summary>
   /// <inheritdoc cref="Booking.Start" />
   /// </summary>
-  public DateOnly Finish { get; set; }
+  public DateTime Finish { get; set; }
   /// <summary>
   /// <inheritdoc cref="Booking.Finish" />
   /// </summary>

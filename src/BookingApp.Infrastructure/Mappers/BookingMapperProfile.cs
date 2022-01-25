@@ -10,10 +10,8 @@ public class BookingMapperProfile : Profile
   public BookingMapperProfile()
   {
     CreateMap<Booking, BookingDto>().ReverseMap();
-    CreateMap<CreateBookingDto, BookingDto>().ReverseMap();
-    CreateMap<CreateBookingDto, Booking>().ReverseMap();
-    CreateMap<UpdateBookingDto, BookingDto>().ReverseMap();
-    CreateMap<UpdateBookingDto, Booking>().ReverseMap();
+    CreateMap<CreateUpdateBookingDto, BookingDto>().ReverseMap();
+    CreateMap<CreateUpdateBookingDto, Booking>().ReverseMap();
 
     CreateMap<ContactInfo, ContactInfoDto>().ReverseMap();
     CreateMap<CreateUpdateContactInfoDto, ContactInfoDto>().ReverseMap();

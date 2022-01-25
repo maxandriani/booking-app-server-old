@@ -1,6 +1,6 @@
 namespace BookingApp.Bookings;
 
-public class UpdateBookingDto
+public class CreateUpdateBookingDto
 {
   /// <summary>
   /// <inheritdoc cref="Booking.PlaceId" />
@@ -9,11 +9,11 @@ public class UpdateBookingDto
   /// <summary>
   /// <inheritdoc cref="Booking.Start" />
   /// </summary>
-  public DateOnly Start { get; set; }
+  public DateTime Start { get; set; }
   /// <summary>
   /// <inheritdoc cref="Booking.Finish" />
   /// </summary>
-  public DateOnly Finish { get; set; }
+  public DateTime Finish { get; set; }
   /// <summary>
   /// <inheritdoc cref="Booking.ReservationCode" />
   /// </summary>

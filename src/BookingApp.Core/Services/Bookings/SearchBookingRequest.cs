@@ -18,12 +18,12 @@ public class SearchBookingRequestDto : PagedAndSortedRequest, ISearchableRequest
   /// Filtra resultados com base em um período.
   /// </summary>
   /// <value></value>
-  public DateOnly? Start { get; set; }
+  public DateTime? Start { get; set; }
   /// <summary>
   /// Filtra resultados com base em um período.
   /// </summary>
   /// <value></value>
-  public DateOnly? Finish { get; set; }
+  public DateTime? Finish { get; set; }
   /// <summary>
   /// Pesquisa por uma reserva com base no código de integração.
   /// </summary>
@@ -34,4 +34,9 @@ public class SearchBookingRequestDto : PagedAndSortedRequest, ISearchableRequest
   /// </summary>
   /// <value></value>
   public string? ReservedTo { get; set; } = string.Empty;
+  /// <summary>
+  /// Incluir as transações na consulta.
+  /// </summary>
+  /// <value></value>
+  public bool? WithTransactions { get; set; }
 }

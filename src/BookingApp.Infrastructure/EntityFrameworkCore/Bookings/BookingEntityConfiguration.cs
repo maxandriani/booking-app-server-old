@@ -17,6 +17,12 @@ public class BookingEntityConfiguration : IEntityTypeConfiguration<Booking>
       .HasMaxLength(BookingContraints.ReservedToMaxLength)
       .HasComment("Nome do responsável");
 
+    builder.Property(p => p.Start)
+      .HasColumnType("timestamp without time zone");
+
+    builder.Property(p => p.Finish)
+      .HasColumnType("timestamp without time zone");
+
     
     builder.HasOne(p => p.Place)
       .WithMany()

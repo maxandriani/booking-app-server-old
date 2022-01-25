@@ -4,6 +4,7 @@ using BookingApp.Mappers;
 using BookingApp.Places;
 using BookingApp.Data;
 using BookingApp.Payments;
+using BookingApp.Bookings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddAutoMapper(typeof(BookingMapperProfile));
 builder.Services.AddScoped<IPlaceService, PlaceService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IContactInfoService, ContactInfoService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
