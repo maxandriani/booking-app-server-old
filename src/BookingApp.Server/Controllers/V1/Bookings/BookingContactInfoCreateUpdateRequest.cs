@@ -1,12 +1,7 @@
-namespace BookingApp.Bookings;
+namespace BookingApp.Bookings.v1;
 
-public class CreateUpdateContactInfoDto
+public class BookingContactInfoCreateUpdateRequest
 {
-  /// <summary>
-  /// Chave extrangeira.
-  /// </summary>
-  /// <value></value>
-  public int BookingId { get; set; }
   /// <summary>
   /// <inheritdoc cref="ContactInfo.Kind" /> 
   /// </summary>
